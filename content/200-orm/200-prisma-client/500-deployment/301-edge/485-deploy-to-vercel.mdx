@@ -178,9 +178,9 @@ If you created the project from scratch, you can create a new edge function as f
 First, create a new API route, e.g. by using these commands:
 
 ```terminal
-mkdir src/app/api
-mkdir src/app/api/edge
-touch src/app/api/edge/route.ts
+mkdir app/api
+mkdir app/api/edge
+touch app/api/edge/route.ts
 ```
 
 Here is a sample code snippet that you can use to instantiate `PrismaClient` and send a query to your database in the new `app/api/edge/route.ts` file you just created:
@@ -297,9 +297,9 @@ If you created the project from scratch, you can create a new edge function as f
 First, create a new API route, e.g. by using these commands:
 
 ```terminal
-mkdir src/app/api
-mkdir src/app/api/edge
-touch src/app/api/edge/route.ts
+mkdir app/api
+mkdir app/api/edge
+touch app/api/edge/route.ts
 ```
 
 Here is a sample code snippet that you can use to instantiate `PrismaClient` and send a query to your database in the new `app/api/edge/route.ts` file you just created:
@@ -312,7 +312,7 @@ import { Client } from '@planetscale/database'
 
 export const runtime = 'edge'
 
-export async function GET(request) {
+export async function GET(request: Request) {
   const client = new Client({ url: process.env.DATABASE_URL })
   const adapter = new PrismaPlanetScale(client)
   const prisma = new PrismaClient({ adapter })
@@ -415,9 +415,9 @@ If you created the project from scratch, you can create a new edge function as f
 First, create a new API route, e.g. by using these commands:
 
 ```terminal
-mkdir src/app/api
-mkdir src/app/api/edge
-touch src/app/api/edge/route.ts
+mkdir app/api
+mkdir app/api/edge
+touch app/api/edge/route.ts
 ```
 
 Here is a sample code snippet that you can use to instantiate `PrismaClient` and send a query to your database in the new `app/api/edge/route.ts` file you just created:
